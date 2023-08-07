@@ -20,7 +20,9 @@ class App extends StatelessWidget{
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Expanded(child:
-                Image.asset('assets/images/fastmedic.jpg',)),
+                Image.asset('assets/images/fastmedic.jpg',
+                width: 30, height: 30,)
+                ),
                 Text('Research',
                 style: TextStyle(color: Colors.black
                 ),
