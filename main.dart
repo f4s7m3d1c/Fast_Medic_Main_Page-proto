@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'container/MenuSelect.dart';
+import 'container/SymptomsContainer.dart';
 
 void main() {
   runApp(App());
@@ -16,7 +16,7 @@ class App extends StatelessWidget{
           ),
           backgroundColor: Colors.white,
           title:
-          Container(
+          Container( //검색창 UI
             decoration: BoxDecoration(
               color: Colors.white,
               borderRadius: BorderRadius.circular(30),
@@ -39,10 +39,9 @@ class App extends StatelessWidget{
                 SizedBox(
                   width: 170,
                 ),
-                Icon(Icons.search,
-                  color: Colors.grey,
-                  size: 35,
-                ),
+                    Text('log',
+                      style: TextStyle(color: Colors.black),
+                    ),
                 ],
                 ),
               ],
@@ -50,11 +49,48 @@ class App extends StatelessWidget{
           ),
         ),
         body:
-        Row(
-          children: [
-            Menu(Containercolor: false),
-          ],
-        ),
+          Padding(//증상 선택 UI. 
+            padding: const EdgeInsets.all(30),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Column(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Symptoms( //증상 이름과 증상 이미지를 선택.
+                          ConditionName: '두통',
+                          images: 'assets/images/Headache.jpg',
+                        ),
+                        Symptoms(
+                          ConditionName: '호흡',
+                          images: 'assets/images/breath.jpg',
+                        ),
+                        Symptoms(
+                          ConditionName: '두통',
+                          images: 'assets/images/Headache.jpg',
+                        ),
+                      ],
+                    ),
+                Column(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Symptoms(
+                      ConditionName: '두통',
+                      images: 'assets/images/Headache.jpg',
+                    ),
+                    Symptoms(
+                      ConditionName: '두통',
+                      images: 'assets/images/Headache.jpg',
+                    ),
+                    Symptoms(
+                      ConditionName: '두통',
+                      images: 'assets/images/Headache.jpg',
+                    ),
+                  ],
+                ),
+              ],
+            ),
+          ),
       ),
     );
   }
